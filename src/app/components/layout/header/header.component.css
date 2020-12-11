@@ -1,0 +1,96 @@
+@import "../../../../assets/fonts/font-pt-sans.css";
+
+.navbar {
+  background-color: var(--main-color);
+}
+
+.navbar img:hover {
+  cursor: pointer;
+}
+
+.nav-link {
+  color: var(--nav-link) !important;
+  font-family: "PT Sans", "sans-serif";
+  font-size: 22px;
+}
+
+.nav-link .i {
+  font-size: 24px;
+  margin-right: 5px;
+}
+
+.searchWrapper input {
+  height: 45px;
+  font-family: "Crimson Text";
+  font-size: 18px !important;
+}
+
+.searchWrapper input:focus {
+  outline: none !important;
+  box-shadow: none !important;
+  border: 1px solid gray;
+}
+
+.nav-item button {
+  width: 140px;
+  color: rgb(85, 105, 101) !important;
+  font-family: "PT Sans", sans-serif;
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.nav-item button:hover {
+  color: white !important;
+}
+
+.nav-item .i {
+  font-size: 22px;
+  margin-right: 5px;
+}
+
+.nav-link:hover {
+  color: rgb(56, 54, 54) !important;
+}
+
+#myAcc button {
+  color: rgb(85, 105, 101) !important;
+  font-family: "PT Sans", sans-serif;
+  font-size: 20px;
+}
+
+#myAcc button:hover {
+  color: white !important;
+}
+
+.dropdown-link {
+  color: var(--nav-link) !important;
+  font-family: "Crimson Text", serif;
+  font-size: 24px;
+}
+
+.dropdown-link:hover,
+.dropdown-link:link,
+.dropdown-link:active {
+  text-decoration: none;
+  color: rgb(56, 54, 54) !important;
+}
+
+.dropdown-link i {
+  font-size: 20px;
+}
+
+.dropdown-menu {
+  width: 200px !important;
+}
+
+.dropdown-menu:hover,
+.checkbox label:hover {
+  cursor: pointer;
+}
+
+.dropdown-menu label {
+  width: 100%;
+  padding-left: 10px;
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+}

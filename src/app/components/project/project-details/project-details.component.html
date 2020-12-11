@@ -1,0 +1,118 @@
+<div class="d-flex flex-row content">
+  <div class="sidebar d-flex flex-column">
+    <div class="noDocsContainer d-flex flex-column" *ngIf="documents.length == 0">
+      <h3>No document exist on this project.</h3>
+      <button type="button" class="btn btn-outline-secondary text-secondary" data-toggle="modal" title="Create document"
+        (click)="createDocument()">
+        <fa-icon [icon]="faPlus"></fa-icon> Create
+      </button>
+    </div>
+    <div class="searchWrapper d-flex flex-row" *ngIf="documents.length > 0">
+      <input class="form-control" type="text" placeholder="Search documentation..." aria-label="Search"
+        [(ngModel)]="searchCriteria" (input)="documentSearch()" />
+      <button type=" button" class="btn btn-outline-secondary" style="margin-right: 3px;" (click)="refresh()">
+        <fa-icon [icon]="faRefresh"></fa-icon>
+      </button>
+      <button type=" button" class="btn btn-outline-secondary" (click)="createDocument()">
+        <fa-icon [icon]="faPlus"></fa-icon>
+      </button>
+    </div>
+    <ul class="pl-2" *ngIf="documents.length > 0">
+      <li *ngFor="let document of filteredDocuments" class="d-flex flex-row align-items-center">
+        <div class="text-wrap mr-1">
+          <a (click)="loadDocument(document)" title="{{document.title}}"
+            [ngStyle]="{ 'color' : (shownDocument.id == document.id) ? 'rgb(114, 117, 117)' : '#12140b' }">{{document.title}}</a>
+        </div>
+        <div class="d-flex flex-column justify-content-around ml-auto mr-3">
+          <div *ngIf="documents[0].id != document.id" (click)="modifyOrder(document, document.orderNumber - 1)">
+            <fa-icon [icon]="faUp"></fa-icon>
+          </div>
+          <div *ngIf="documents[documents.length - 1].id != document.id"
+            (click)="modifyOrder(document, document.orderNumber + 1)">
+            <fa-icon [icon]="faDown"></fa-icon>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="w-100 px-3">
+    <div class="fbox d-flex flex-row justify-content-between">
+      <div class="toolbar d-flex flex-row  align-items-center mr-auto mt-2">
+        <div class="icon-wrapper text-secondary pl-3" data-toggle="modal" data-target="#myModal" title="Edit project">
+          <fa-icon [icon]="faEdit"></fa-icon>
+        </div>
+        <div class="icon-wrapper text-secondary pl-4" data-toggle="modal" data-target="#AddRemoveUser"
+          title="Add/Remove participants">
+          <fa-icon [icon]="faUserEdit"></fa-icon>
+        </div>
+        <div class="icon-wrapper text-secondary pl-4 pr-3" data-toggle="modal" data-target="#ModalDeleteProject"
+          title="Add/Remove participants">
+          <fa-icon [icon]="faTrash" style="color: red; opacity: 0.7"></fa-icon>
+        </div>
+      </div>
+
+      <div id="ToolbarForDoc" *ngIf="shownDocument != null && !(editActive == false && editorShow == true)"
+        class="toolbar d-flex flex-row justify-content-center align-items-center mt-2"
+        [ngStyle]="{ 'width' : (editorShow && editActive) ? '300px' : '' }">
+        <form *ngIf="editorShow && editActive" class="mx-2">
+          <div class="form-group d-flex flex-row align-items-center my-auto">
+            <label for="exampleFormControlSelect1" class="mr-1">Status:</label>
+            <select class="form-control" id="exampleFormControlSelect1" (change)="changeStatus($event)"
+              [value]="shownDocument.status">
+              <option>published</option>
+              <option>draft</option>
+            </select>
+          </div>
+        </form>
+        <div *ngIf="editActive" class="icon-wrapper text-secondary" (click)="documentClosedHandler()"
+          title="View document">
+          <fa-icon [icon]="faView"></fa-icon>
+        </div>
+        <div *ngIf="!editActive" class="icon-wrapper text-secondary" (click)="editDocument()" title="Edit document">
+          <fa-icon [icon]="faFileAlt"></fa-icon>
+        </div>
+        <div class="icon-wrapper text-secondary" ngxClipboard [cbContent]="sharedLink + shownDocument.uuid"
+          (cbOnSuccess)="showAlert()" title="Share document">
+          <fa-icon [icon]="faShare"></fa-icon>
+        </div>
+        <div class="alert" [class.alert-visible]="successMsgVisible" (click)="closeAlert()">
+          Share link copied!
+        </div>
+      </div>
+    </div>
+    <div class="border mt-3 w-100 " *ngIf="!editorShow && shownDocument != null">
+    <app-document-view *ngIf="!editorShow && shownDocument != null" [document]="shownDocument">
+    </app-document-view>
+    </div>
+    <app-project-editor *ngIf="editorShow" [projectId]="project.id" [document]="shownDocument"
+      [orderNumber]="documents.length > 0 ? documents[documents.length-1].orderNumber + 1: 1" [editActive]="editActive"
+      (documentDeleted)="documentDeletedHandler()" (documentClosed)="documentClosedHandler()"
+      (documentCreated)="documentCreatedHandler()"></app-project-editor>
+    <app-project-edit [project]="project">
+    </app-project-edit>
+    <app-project-users [project]="project"></app-project-users>
+  </div>
+  <div class="modal fade" id="ModalDeleteProject" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Delete project</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Are you sure you want to delete this project?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-secondary" style="margin: 0 5px" data-dismiss="modal">No</button>
+          <button type="button" class="btn btn-outline-danger" data-dismiss="modal"
+            (click)="deleteProject()">Yes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,26 @@
+@import "./assets/fonts/font-crimson-text.css";
+@import "./assets/fonts/font-lato.css";
+@import "./assets/fonts/font-pt-sans.css";
+
+:root {
+  --main-color: rgba(238, 234, 238, 0.877);
+  --secondary-color: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.897),
+    rgba(243, 240, 240, 0.733),
+    rgba(255, 255, 255, 0.884)
+  );
+  --cardOuter: rgba(219, 218, 218, 0.514);
+  --nav-link: rgb(85, 105, 101);
+  --card-shadow: rgb(219, 215, 219);
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+button:focus {
+  box-shadow: none !important;
+}

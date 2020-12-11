@@ -1,0 +1,43 @@
+.container {
+  width: 100%;
+  min-height: 100vh !important;
+}
+
+.editorContainer {
+  height: 90%;
+  padding: 15px 50px;
+}
+
+.titleInput {
+  height: 45px !important;
+  margin-bottom: 5px;
+  font-family: "Crimson Text", serif;
+  font-size: 18px !important;
+}
+
+.titleInput:focus {
+  outline: none !important;
+  box-shadow: none !important;
+  border: 1px solid gray !important;
+}
+
+.editorContainer button btn-outline-secondary {
+  width: 120px;
+  color: rgb(85, 105, 101) !important;
+  font-family: "PT Sans", sans-serif;
+  font-size: 22px;
+  padding-right: 25px;
+}
+
+.editorContainer btn-danger {
+  color: white !important;
+}
+
+.editorContainer button:hover {
+  color: white !important;
+}
+
+.editorContainer fa-icon {
+  font-size: 22px;
+  margin-right: 4px;
+}

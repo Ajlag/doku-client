@@ -1,0 +1,29 @@
+@font-face {
+  font-family: 'PT Sans';
+  font-style: italic;
+  font-weight: 400;
+  src: local('PT Sans Italic'), local('PTSans-Italic'), url(src/assets/fonts/PT_Sans/PT-Sans-Italic.ttf) format('truetype'), url(src/assets/fonts/PT_Sans/PT-Sans-Italic.woff2) format('woff2'), url(src/assets/fonts/PT_Sans/PT-Sans-Italic.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'PT Sans';
+  font-style: italic;
+  font-weight: 700;
+  src: local('PT Sans Bold Italic'), local('PTSans-BoldItalic'), url(src/assets/fonts/PT_Sans/PT-Sans-Bold-Italic.ttf) format('truetype'), url(src/assets/fonts/PT_Sans/PT-Sans-Bold-Italic.woff2) format('woff2'), url(src/assets/fonts/PT_Sans/PT-Sans-Bold-Italic.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'PT Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url(src/assets/fonts/PT_Sans/PT-Sans.eot);
+  src: local('PT Sans'), local('PTSans-Regular'), url(src/assets/fonts/PT_Sans/PT-Sans.ttf) format('truetype'), url(src/assets/fonts/PT_Sans/PT-Sans.svg#PTSans) format('svg'), url(src/assets/fonts/PT_Sans/PT-Sans.woff2) format('woff2'), url(src/assets/fonts/PT_Sans/PT-Sans.eot?#iefix) format('embedded-opentype'), url(src/assets/fonts/PT_Sans/PT-Sans.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'PT Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: local('PT Sans Bold'), local('PTSans-Bold'), url(src/assets/fonts/PT_Sans/PT-Sans-Bold.ttf) format('truetype'), url(src/assets/fonts/PT_Sans/PT-Sans-Bold.woff2) format('woff2'), url(src/assets/fonts/PT_Sans/PT-Sans-Bold.woff) format('woff');
+}
+

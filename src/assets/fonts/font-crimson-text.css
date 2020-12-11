@@ -1,0 +1,29 @@
+@font-face {
+  font-family: 'Crimson Text';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Crimson Text Italic'), local('CrimsonText-Italic'), url(src/assets/fonts/CrimsonText/Crimson-Text-Italic.woff) format('woff'), url(src/assets/fonts/CrimsonText/Crimson-Text-Italic.ttf) format('truetype'), url(src/assets/fonts/CrimsonText/Crimson-Text-Italic.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'Crimson Text';
+  font-style: italic;
+  font-weight: 700;
+  src: local('Crimson Text Bold Italic'), local('CrimsonText-BoldItalic'), url(src/assets/fonts/CrimsonText/Crimson-Text-Bold-Italic.woff) format('woff'), url(src/assets/fonts/CrimsonText/Crimson-Text-Bold-Italic.ttf) format('truetype'), url(src/assets/fonts/CrimsonText/Crimson-Text-Bold-Italic.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'Crimson Text';
+  font-style: normal;
+  font-weight: 400;
+  src: url(src/assets/fonts/CrimsonText/Crimson-Text-Regular.eot);
+  src: local('Crimson Text Regular'), local('CrimsonText-Regular'), local('Crimson Text'), url(src/assets/fonts/CrimsonText/Crimson-Text-Regular.woff) format('woff'), url(src/assets/fonts/CrimsonText/Crimson-Text-Regular.eot?#iefix) format('embedded-opentype'), url(src/assets/fonts/CrimsonText/Crimson-Text-Regular.ttf) format('truetype'), url(src/assets/fonts/CrimsonText/Crimson-Text-Regular.svg#CrimsonText) format('svg'), url(src/assets/fonts/CrimsonText/Crimson-Text-Regular.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'Crimson Text';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Crimson Text Bold'), local('CrimsonText-Bold'), url(src/assets/fonts/CrimsonText/Crimson-Text-Bold.woff) format('woff'), url(src/assets/fonts/CrimsonText/Crimson-Text-Bold.ttf) format('truetype'), url(src/assets/fonts/CrimsonText/Crimson-Text-Bold.woff2) format('woff2');
+}
+

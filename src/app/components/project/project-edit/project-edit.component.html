@@ -1,0 +1,26 @@
+<div class="modal fade" id="myModal" role="dialog" aria-labelledby="Longtitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <form [formGroup]="modalForm">
+        <div class="modal-header">
+         <h5>Edit project</h5>
+        </div>
+        <div class="modal-body mb-1">
+          <input class="modal-title mb-2" formControlName="name" type="text" placeholder="Title project.."
+                 style="width: 100%;">
+          <textarea formControlName="description" placeholder="Description project.." style="width: 100%;"></textarea>
+        </div>
+        <div class="modal-footer">
+
+          <button type="button" class="btn btn-outline-secondary ml-auto" data-dismiss="modal">
+            <fa-icon [icon]="faCancel"></fa-icon>
+            Close
+          </button>
+          <button type="button" class="btn btn-outline-secondary" data-dismiss="modal" (click)="editProject()">
+            <fa-icon [icon]="faSave"></fa-icon> Save
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

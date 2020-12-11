@@ -1,0 +1,32 @@
+<div class="modal fade" id="AddRemoveUser" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="user">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="AddRemoveUserTitle">Add or Remove participants</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="fbox d-flex flex-row justify-content-between align-items-stretch pt-1 pb-1"
+          *ngFor="let user of users">
+          <p> {{user.firstName}} {{user.lastName}}</p>
+          <button *ngIf="!userOnProject(user)" type="button"
+            class="btn btn-outline-secondary d-flex flex-row justify-content-start  " (click)="addUserToProject(user.id)">
+            <fa-icon [icon]="faPlus" class="ml-3 mr-1 "></fa-icon>
+            <span> Add</span>
+          </button>
+
+          <button *ngIf="userOnProject(user)" type="button"
+            class="btn btn-outline-danger d-flex flex-row justify-content-start"
+            (click)="removeUserFromProject(user.id)">
+            <fa-icon [icon]="faUserMinus" class="ml-3 mr-1"></fa-icon>
+
+            Remove
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

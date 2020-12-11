@@ -1,0 +1,65 @@
+.content {
+  min-height: 100vh !important;
+  height: 100%;
+  background: var(--secondary-color);
+}
+
+.filters {
+  width: 98%;
+  height: 50px;
+  margin-top: 15px;
+  background-color: rgba(219, 218, 218, 0.514);
+}
+
+.filters span {
+  font-family: "Crimson Text", serif;
+  font-size: 24px;
+}
+
+.searchWrapper {
+  width: 300px;
+  height: 35px;
+}
+
+.searchWrapper input:focus {
+  outline: none !important;
+  box-shadow: none !important;
+  border: 1px solid gray;
+}
+
+.dropdown-link {
+  color: var(--nav-link) !important;
+  font-family: "Crimson Text", serif;
+  font-size: 24px;
+}
+
+.dropdown-link:hover,
+.dropdown-link:link,
+.dropdown-link:active {
+  text-decoration: none;
+  color: rgb(56, 54, 54) !important;
+}
+
+.dropdown-link i {
+  font-size: 20px;
+}
+
+.dropdown-menu {
+  width: 200px !important;
+}
+
+.dropdown-menu:hover,
+.checkbox label:hover {
+  cursor: pointer;
+}
+
+.dropdown-menu label {
+  width: 100%;
+  padding-left: 10px;
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+}
+
+.btn {
+  margin-left: auto;
+}
